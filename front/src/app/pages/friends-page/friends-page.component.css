@@ -1,0 +1,29 @@
+.firstLine{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 120px 0px 20px;
+}
+.friends-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .search-container {
+    border-radius: 8px;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    width: 270px;
+    background-color: var(--purrple-bg);
+}
+.search-input::placeholder, .search-input {
+    border: none;
+    background-color: var(--purrple-bg);
+    outline: none;
+    font-size: 16px;
+    color: var(--blue-color);
+}  

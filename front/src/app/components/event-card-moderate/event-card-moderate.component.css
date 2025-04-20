@@ -1,0 +1,14 @@
+.imageOfEvent{
+    width: 500px;
+    height: auto;
+    border-radius: 20px;
+}
+.description{
+    display: flex;
+    margin-top: 10px;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

@@ -1,0 +1,18 @@
+<div class="registered-events">
+    <h3>Мероприятия, на которые вы записаны</h3>
+  
+    <div *ngIf="isLoading">Загрузка...</div>
+     <div *ngIf="!isLoading && registeredEvents.length === 0">
+      Вы не записаны ни на одно мероприятие.
+    </div> 
+  
+    <div class="listBlock" *ngIf="!isLoading && registeredEvents.length > 0">
+      <app-event-card
+        *ngFor="let event of registeredEvents"
+        [event]="event"
+        [showUnregisterButton]="true"
+        (unregister)="unregisterFromEvent($event)"
+      ></app-event-card>
+    </div>
+  </div>
+  

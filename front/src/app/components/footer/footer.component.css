@@ -1,0 +1,37 @@
+footer{
+    background-color: var(--footer-bg);
+    padding-top: 37px;
+    padding-bottom: 37px;
+}
+.first_line{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.contacts{
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+.contacts p{
+    font-size: 20px;
+    color: var(--black-color);
+}
+.social_links{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+}
+.socialIcon{
+    width: 20px;
+    height: 20px;
+}
+.buttonCombitOrg button{
+    color: var(--white-back);
+    font-size: 20px;
+}
+.legal-details{
+    text-align: center;
+}

@@ -1,0 +1,28 @@
+<app-header></app-header>
+<div class="wrapper">
+  <div class="allInfo">
+    <div class="imageBlock">
+      <img [src]="eventData.imageUrl" alt="{{ eventData.title }}" class="largeImage event-image">
+    </div>
+    <div class="text">
+      <h1>{{ eventData.title }}</h1>
+      <p><strong>Дата:</strong> {{ format() }}</p>
+      <p><strong>Адрес:</strong> {{ eventData.addres }}</p> 
+      @if(eventData.offline){
+      <p><strong>Формат мероприятия:</strong>Offline мероприятие</p> 
+      }
+      @if(!eventData.offline){
+        <p><strong>Формат мероприятия:</strong>Online мероприятие</p> 
+        }
+      <p><strong>Описание: </strong>{{ eventData.description }}</p>
+      <button class="btn-style2 courier_new_bold" (click)="subscribeToEvent()">Записаться</button>
+    </div>
+  </div>
+  @if(eventData.offline){
+  <div class="eventOnMap" *ngIf="eventData">
+    <h1>Мы на карте:</h1>
+    <app-map [events]="[eventData]"></app-map>
+  </div>
+}
+</div>
+<app-footer></app-footer>

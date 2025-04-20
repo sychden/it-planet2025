@@ -1,0 +1,221 @@
+.edit-profile-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .form-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #333;
+  }
+  
+  .form-actions {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .save-button {
+    padding: 0.6rem 1.5rem;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+  
+  .save-button:hover:not(:disabled) {
+    background: #3e8e41;
+    transform: translateY(-1px);
+  }
+  
+  .save-button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .cancel-button {
+    padding: 0.6rem 1.5rem;
+    background: #f0f0f0;
+    color: #333;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .cancel-button:hover {
+    background: #e0e0e0;
+  }
+  
+  .form-content {
+    display: flex;
+    gap: 3rem;
+  }
+  
+  .avatar-section {
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .avatar-upload {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .avatar-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f0f0f0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .upload-label {
+    display: block;
+    text-align: center;
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 1rem;
+  }
+  
+  .upload-label:hover {
+    background: #e9ecef;
+  }
+  
+  .upload-icon {
+    margin-right: 5px;
+  }
+  
+  .role-display {
+    padding: 0.3rem 1rem;
+    background: #4a6fa5;
+    color: white;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+  
+  .form-fields {
+    flex: 1;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border 0.3s;
+  }
+  
+  .form-input:focus {
+    border-color: #4a6fa5;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(74, 111, 165, 0.2);
+  }
+  
+  .form-textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    resize: vertical;
+    font-family: inherit;
+  }
+  
+  .form-textarea:focus {
+    border-color: #4a6fa5;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(74, 111, 165, 0.2);
+  }
+  
+  .error-message {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+  }
+  
+  .hint {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 0.3rem;
+  }
+  
+  .counter {
+    text-align: right;
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 0.3rem;
+  }
+  
+  .privacy-settings {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .privacy-settings h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .privacy-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+  }
+  
+  .privacy-option input {
+    margin-right: 0.8rem;
+  }
+  
+  .privacy-option label {
+    color: #555;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .form-content {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .avatar-section {
+      align-items: flex-start;
+    }
+  }

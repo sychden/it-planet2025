@@ -1,0 +1,66 @@
+.header {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 12px 83px 12px 83px;
+    background-color: var(--white-back);
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.logo{
+    width: 301px;
+    height: 64px;    
+}
+.search-container {
+    border-radius: 8px;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    
+    background-color: var(--purrple-bg);
+}
+.search-input::placeholder, .search-input {
+    border: none;
+    background-color: var(--purrple-bg);
+    outline: none;
+    font-size: 16px;
+    color: var(--blue-color);
+}  
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.accountIcon{
+    width: 23px;
+    height: 23px;
+
+}
+.accountShape{
+    background-color: var(--purrple-bg);
+    width: 43px;
+    height: 43px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* .burger {
+    display: flex; 
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.burger span {
+    width: 35px;
+    height: 4px;
+    border-radius: 20px;
+    background: var(--black-color);
+    
+} */
+      
+
+

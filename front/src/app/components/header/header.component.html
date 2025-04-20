@@ -1,0 +1,23 @@
+<header class="header">
+    <div class="logotype">
+        <a href="/"><img src="/assets/imgs/logoHeader.png" alt="logo" class="logo"></a>
+    </div>
+  
+   
+    <div class="actions">
+        <div class="search-container">
+            <input   type="text"   placeholder="Поиск"   [(ngModel)]="searchText"
+            (input)="onSearchChange()"class="search-input courier_new_normal" (keydown.enter)="onSearchChange()">
+            
+            <!-- <button class="search-button" (click)="onSearch()">🔍</button> -->
+          </div>
+          <a href="/reg"><button class="btn-style1 courier_new_normal">Регистрация</button></a>
+          <a href="/profile"><div class="accountShape"><img src="/assets/imgs/accountIcon.png" alt="account" class="accountIcon"></div></a>
+      <!-- <button class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button> -->
+    </div>
+</header>
+  

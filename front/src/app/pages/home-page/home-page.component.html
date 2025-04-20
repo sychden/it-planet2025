@@ -1,0 +1,52 @@
+<app-header></app-header>
+<div class="wrapper">
+    <div class="filter">
+        <select class="filter-select" [(ngModel)]="selectedCategory">
+            <option value="" disabled>Категория</option>
+            <option value="">Все</option>
+            <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+        </select>
+        <select class="filter-select" [(ngModel)]="selectedType">
+            <option value="" disabled>Тип мероприятия</option>
+            <option value="">Все мероприятия</option>
+            <option value="live">Живое мероприятие</option>
+            <option value="online" (click)="openList()">Online мероприятие</option>
+        </select>
+        <input type="date" [(ngModel)]="selectedDate" class="date-picker">    
+        
+        <div class="search-container">
+            <input
+              type="text"
+              placeholder="Город или адрес"
+              [(ngModel)]="selectedCity"
+              (input)="filteredEvents()"
+              class="search-input courier_new_normal"
+            />
+          </div>
+       
+      
+        
+        <button class="filter-btn courier_new_normal" (click)="openMap()">Карта</button>
+        <button class="filter-btn courier_new_normal"  (click)="openList()">Список</button>
+    </div>
+    @if (isMap) {
+    <div class="mapBlock">
+        <app-map [events]="filteredEvents()"></app-map>
+    </div>
+}
+    <h1 *ngIf="isList">Вот список мероприятий:</h1>
+    <div class="listBlock" *ngIf="isList">
+        <app-event-card *ngFor="let event of filteredEvents()" [event]="event"></app-event-card>
+    </div>
+    <h1>Популярные мероприятия</h1>
+    <div class="listBlock">
+        <app-event-card *ngFor="let event of poplarEvents" [event]="event"></app-event-card>
+    </div>
+    <h1>Новости</h1>
+    <div class="listBlock">
+        <app-news-card *ngFor="let n of news" [news]="n"></app-news-card>
+    </div>
+</div>
+<app-footer></app-footer>
+
+

@@ -1,0 +1,153 @@
+<div class="create-event-container">
+    <form [formGroup]="eventForm" (ngSubmit)="onSubmit()" class="event-form">
+      <h1>Создание нового мероприятия</h1>
+  
+      <!-- Блок с изображением -->
+      <div class="image-section">
+        <div class="image-upload">
+          <img [src]="imagePreview || '/assets/event-placeholder.png'" 
+               alt="Превью мероприятия" 
+               class="image-preview">
+          <label class="upload-label form-label">
+            <input type="file" 
+                   accept="image/*" 
+                   (change)="onImageChange($event)" 
+                   hidden
+                   class="input-form">
+            📎 Загрузить изображение
+          </label>
+          <div *ngIf="eventForm.get('image')?.invalid && eventForm.get('image')?.touched" 
+               class="error">
+            Пожалуйста, загрузите изображение
+          </div>
+        </div>
+      </div>
+  
+      <!-- Основные поля -->
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Название мероприятия</label>
+          <input type="text" 
+                 formControlName="title" 
+                 placeholder="Введите название">
+          <div *ngIf="eventForm.get('title')?.invalid && eventForm.get('title')?.touched" 
+               class="error">
+            Минимум 3 символа
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label class="form-label">Категория</label>
+          <select formControlName="category">
+            <option value="" disabled>Выберите категорию</option>
+            <option *ngFor="let category of categories" [value]="category">
+              {{ category }}
+            </option>
+          </select>
+          <div *ngIf="eventForm.get('category')?.invalid && eventForm.get('category')?.touched" 
+               class="error">
+            Пожалуйста, выберите категорию
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label class="form-label">Описание</label>
+        <textarea formControlName="description" 
+                  placeholder="Подробное описание мероприятия"
+                  rows="5" class="input-form"></textarea>
+        <div *ngIf="eventForm.get('description')?.invalid && eventForm.get('description')?.touched" 
+             class="error">
+          Минимум 10 символов
+        </div>
+      </div>
+  
+      <!-- Формат мероприятия -->
+      <div class="form-group">
+        <label class="form-label">Формат мероприятия</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" 
+                   formControlName="offline" 
+                   [value]="true">
+            Офлайн
+          </label>
+          <label>
+            <input type="radio" 
+                   formControlName="offline" 
+                   [value]="false">
+            Онлайн
+          </label>
+        </div>
+      </div>
+  
+      <!-- Адрес (только для офлайн) -->
+      <div class="form-group" *ngIf="eventForm.get('offline')?.value">
+        <label class="form-label">Адрес проведения*</label>
+        <input type="text" 
+               formControlName="address" 
+               placeholder="Укажите адрес" class="input-form">
+        <div *ngIf="eventForm.get('address')?.invalid && eventForm.get('address')?.touched" 
+             class="error">
+          Пожалуйста, укажите адрес
+        </div>
+      </div>
+  
+      <!-- Дата и время -->
+      <div class="form-group">
+        <label class="form-label">Дата и время проведения*</label>
+        <input type="datetime-local" 
+               formControlName="date" class="input-form">
+        <div *ngIf="eventForm.get('date')?.invalid && eventForm.get('date')?.touched" 
+             class="error">
+          Пожалуйста, укажите дату
+        </div>
+      </div>
+  
+      <!-- Контакты -->
+      <div class="form-group">
+        <label class="form-label">Контакты для связи*</label>
+        <input type="text" 
+               formControlName="contacts" 
+               placeholder="Email/телефон/соцсети" class="input-form">
+        <div *ngIf="eventForm.get('contacts')?.invalid && eventForm.get('contacts')?.touched" 
+             class="error">
+          Пожалуйста, укажите контакты
+        </div>
+      </div>
+  
+      <!-- Теги -->
+      <div class="form-group">
+        <label class="form-label">Теги</label>
+        <div class="tags-container">
+          <div *ngFor="let tag of tags" 
+               class="tag" 
+               [class.selected]="selectedTags.includes(tag)"
+               (click)="toggleTag(tag)">
+            {{ tag }}
+          </div>
+        </div>
+      </div>
+  
+      <!-- Организатор -->
+      <div class="organizer-info" *ngIf="organizerProfile">
+        <h3>Организатор</h3>
+        <div class="organizer-card">
+          <img [src]="organizerProfile.avatarUrl || '/assets/imgs/accountIcon.png'" 
+               alt="Аватар организатора" 
+               class="organizer-avatar">
+          <div class="organizer-details">
+            <h4>{{ organizerProfile.name }}</h4>
+            <p>{{ organizerProfile.email }}</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Кнопка отправки -->
+      <button type="submit" 
+              [disabled]="eventForm.invalid || isLoading" 
+              class="btn-style2 courier_new_normal">
+        {{ isLoading ? 'Создание...' : 'Создать мероприятие' }}
+      </button>
+    </form>
+  </div>

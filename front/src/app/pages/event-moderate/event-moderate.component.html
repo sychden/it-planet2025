@@ -1,0 +1,10 @@
+<div *ngIf="events.length > 0; else noEvents">
+    <app-event-card-moderate 
+      *ngFor="let event of events" 
+      [event]="event"
+    ></app-event-card-moderate>
+  </div>
+  
+  <ng-template #noEvents>
+    <p>Нет мероприятий для модерации.</p>
+  </ng-template>

@@ -1,0 +1,35 @@
+.privacy-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #d0c8f5;
+    border-radius: 10px;
+    background-color: #f7f3ff;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+  }
+  
+  .switch-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: #8f3ff7;
+    margin-bottom: 20px;
+  }
+  
+  .save-btn {
+    background-color: #8f3ff7;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .save-btn:hover {
+    background-color: #6d34d2;
+  }
+  

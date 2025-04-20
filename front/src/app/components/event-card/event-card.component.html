@@ -1,0 +1,24 @@
+<div class="event-card" *ngIf="event">
+    <div class="image">
+      <img [src]="event.imageUrl" alt="Изображение мероприятия" class="eventImage">
+    </div>
+    <div class="description">
+      <h2 class="eventName">{{event.title}}</h2>
+      <p class="eventDate courier_new_bold">{{ format(event.date) }}</p>
+      <p class="eventDescription courier_new_bold">
+        {{ event.description.slice(0, 40) }}{{ event.description.length > 40 ? '...' : '' }}
+      </p>
+      <div class="buttons">
+      <button class="button-style2 button-card-link courier_new_normal" (click)="navigate()">Подробнее</button>
+
+      <button
+        *ngIf="showUnregisterButton"
+        class="button-style2 courier_new_normal ml10"
+        (click)="onUnregisterClick()"
+      >
+        Отказаться
+      </button>
+      </div>
+    </div>
+  </div>
+  

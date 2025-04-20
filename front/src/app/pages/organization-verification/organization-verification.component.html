@@ -1,0 +1,10 @@
+<div *ngIf="orgs.length > 0; else noEvents" class="orgsBlock">
+    <app-org-card
+      *ngFor="let n of orgs" 
+      [org]="n"
+    ></app-org-card>
+  </div>
+  
+  <ng-template #noEvents>
+    <p>Нет Организаций для модерации.</p>
+  </ng-template>

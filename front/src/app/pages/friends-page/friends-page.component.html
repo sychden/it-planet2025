@@ -1,0 +1,19 @@
+<div class="firstLine">
+  <h1 class="page-title">Мои друзья</h1>
+  <div class="search-container">
+    <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    (input)="onSearch()"
+    placeholder="Найти пользователя по нику или email"
+      class="search-input courier_new_normal">
+  </div>
+</div>
+
+<div class="friends-list">
+  <app-user-card-moderate
+    *ngFor="let n of filteredUsers"
+    [user]="n"
+    [isFriendCard]="true"
+    [isFriend]="n.isFriend"></app-user-card-moderate>
+</div>

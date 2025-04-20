@@ -1,0 +1,97 @@
+.create-news-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .news-form h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+  
+  .image-upload {
+    margin-top: 0.5rem;
+  }
+  
+  .preview-image {
+    max-width: 100%;
+    max-height: 300px;
+    display: block;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px dashed #ccc;
+  }
+  
+  .upload-btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: #f0f0f0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .upload-btn:hover {
+    background: #e0e0e0;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .submit-btn:hover:not(:disabled) {
+    background: #3e8e41;
+  }
+  
+  .submit-btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .error {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+  }
+  
+  @media (max-width: 768px) {
+    .create-news-container {
+      padding: 1rem;
+    }
+  }

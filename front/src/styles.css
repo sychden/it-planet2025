@@ -1,0 +1,144 @@
+:root{
+    --white-back: #F8f8f8;
+    --black-color: #252525;
+    --grey-color: #808080;
+    --blue-color: #643FFF;
+    --grey-border-color: #CECDDE;
+    --purrple-bg: #dcdefd;
+    --grey-font: #656565;
+    --footer-bg: #F0F1FF;
+}
+body{
+    background-image: url("/assets/imgs/backgroundLines.png");
+    background-size: cover;
+    background-repeat: repeat;   
+    background-position: center;    
+    background-attachment: fixed;   
+}
+* {
+    margin: 0;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+h1, h2, h3, p{
+    font-family: 'Courier New', Courier, monospace;
+}
+.courier_new_normal, select, option, input[type="date"], input{
+    font-family: 'Courier New';
+    font-style: normal;
+    font-weight: 400;
+}
+.courier_new_bold{
+    font-family: 'Courier New';
+    font-style: normal;
+    font-weight: 700;
+}
+.wrapper{
+    padding-left: 114px;
+    padding-right: 114px;
+}
+.form-label{
+    font-weight: 500;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--grey-font);
+}
+.input-form{
+    margin-top: 10px;
+    background-color: #F0F0F0;
+    border-radius: 16px;
+    border: none;
+    height: 60px;
+    width: 100%;
+    padding: 20px;
+}
+
+.btn-style1{
+    padding: 14px 28px;
+    background: var(--purrple-bg);
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 18px;
+    color: var(--blue-color);
+    cursor: pointer;
+}
+.btn-style1:hover{
+    color: var(--purrple-bg);
+    background-color: var(--blue-color);
+    transition: all 0.3s ease-in-out;
+}
+.btn-style2{
+    padding: 18px 28px;
+    background: var(--blue-color);
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 18px;
+    color: var(--purrple-bg);
+    cursor: pointer;
+}
+.btn-style2:hover{
+    color: var(--blue-color);
+    background-color: var(--purrple-bg);
+    transition: all 0.3s ease-in-out;
+}
+
+.cardModerate{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap:20px;
+    margin: 20px;
+    border: 2px solid var(--blue-color);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.login-shape{
+    background-color: #fff;
+    margin-top: 20px;
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;    
+    padding: 40px;
+}
+
+.listBlock{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    justify-content: space-between;
+    gap:40px;
+    margin:30px 0px;
+  }
+.ml10{
+    margin-left: 10px;
+ }

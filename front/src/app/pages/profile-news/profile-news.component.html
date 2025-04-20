@@ -1,0 +1,11 @@
+<div *ngIf="news.length > 0; else noEvents" class="newsBlock">
+    <app-news-card-moderate 
+      *ngFor="let n of news" 
+      [news]="n"
+    ></app-news-card-moderate>
+    <a [routerLink]="['create/news']"><button class="btn-style1 courier_new_normal">Создать мероприятие</button></a>
+</div>
+
+  <ng-template #noEvents>
+    <p>Нет мероприятий для модерации.</p>
+  </ng-template>

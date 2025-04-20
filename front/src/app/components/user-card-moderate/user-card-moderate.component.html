@@ -1,0 +1,39 @@
+<div class="cardModerate">
+    <p>{{user.id}}</p>
+    <div class="userAvat">
+        @if(user.avatarUrl){
+            <img [src]="user.avatarUrl" class="logo" [alt]="user.nickname">
+        }
+        @if(!user.avatarUrl){
+            <div class="logo">
+                <img src="/assets/imgs/accountIcon.png" class="noLogo" alt="Логотип компании">
+            </div>
+        }
+    </div>
+    <div class="info">
+        <h2>{{user.nickname}}</h2>
+        <p><strong>Email: </strong>{{user.email}}</p>
+    </div>
+    @if(!isFriendCard){
+    <div class="buttons">
+        <button class="btn-style2 courier_new_normal" (click)="lockUser(user.id)">Забанить</button>
+        <button class="btn-style2 courier_new_normal" (click)="unlockUser(user.id)">Разбанить</button>
+    </div>
+}
+    @if(role == 'admin'){
+    <div class="buttons">
+        <button class="btn-style2 courier_new_normal" (click)="makeModerator(user.id)">Назначить модератором</button>
+        <button class="btn-style2 courier_new_normal" (click)="deleteModerator(user.id)">Удалить права модератора</button>
+    </div>
+    }
+    @if(isFriendCard){
+        <div class="buttons">
+          @if(isFriend){
+            <button class="btn-style2 courier_new_normal" (click)="removeFriend(user.id)">Удалить из друзей</button>
+          }
+          @if(!isFriend){
+            <button class="btn-style2 courier_new_normal" (click)="addFriend(user.id)">Добавить в друзья</button>
+          }
+        </div>
+      }
+</div>

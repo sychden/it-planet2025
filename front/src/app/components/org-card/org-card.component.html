@@ -1,0 +1,22 @@
+<div class="cardModerate">
+    <p>{{org.id}}</p>
+    <div class="orgLogo">
+        @if(org.logoUrl){
+            <img [src]="org.logoUrl" class="logo" [alt]="org.nameOfOrg">
+        }
+        @if(!org.logoUrl){
+            <div class="logo">
+                <img src="/assets/imgs/accountIcon.png" class="noLogo" alt="Логотип компании">
+            </div>
+        }
+    </div>
+    <div class="info">
+        <h2>{{org.nameOfOrg}}</h2>
+        <p><strong>Email: </strong>{{org.email}}</p>
+        <a href="{{org.linkToFile}}"><button class="btn-style1 courier_new_normal">Ссылка на документ</button></a>
+    </div>
+    <div class="buttons">
+        <button class="btn-style2 courier_new_normal" (click)="confirmOrg(org.id)">Одобрить</button>
+        <button class="btn-style2 courier_new_normal" (click)="cancelOrg(org.id)">Отклонить</button>
+    </div>
+</div>

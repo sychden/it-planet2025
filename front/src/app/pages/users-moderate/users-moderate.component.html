@@ -1,0 +1,11 @@
+<div *ngIf="users.length > 0; else noEvents" class="usersBlock">
+    <app-user-card-moderate
+      *ngFor="let n of users" 
+      [user]="n"
+      [role]="role"
+    ></app-user-card-moderate>
+  </div>
+  
+  <ng-template #noEvents>
+    <p>Нет зарегистрированных пользователей.</p>
+  </ng-template>

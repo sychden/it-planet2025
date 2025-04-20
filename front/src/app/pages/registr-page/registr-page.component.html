@@ -1,0 +1,65 @@
+<div class="login-shape">
+    <a href="/login">
+        <div class="back">
+            <img src="/assets/imgs/arrow.png" alt="стрелка" class="arrow">
+            <p class="courier_new_bold backP">Назад</p>
+        </div>
+    </a>
+    <h1 class="courier_new_bold">EventFinder</h1>
+    <h2 class="courier_new_bold">Регистрация</h2>
+    <div class="user-type-selector">
+        <p class="courier_new_normal"style="margin-top: 20px;">Зарегистрироваться как</p>
+        <div class="user-type-selector">
+            <label class="courier_new_normal radio">
+              <input type="radio" name="userType" (click)="openUserForm()"value="user" checked> Участник
+            </label>
+            <label class="courier_new_normal radio">
+              <input type="radio" name="userType" (click)="openOrganisationForm()"value="organizer"> Организатор
+            </label>
+          </div>
+    </div>
+      <div *ngIf="isUser">
+        <form action="" class="login-forms" [formGroup]="userform">
+            <label class="form-label">
+                Электронная почта
+                <input formControlName="email" type="text" class="input-form" placeholder="name@gmail.com">
+            </label>
+            <label class="form-label">
+                Имя или никнейм
+                <input formControlName="name" type="text" class="input-form" placeholder="name or nick">
+            </label>
+            <label class="form-label">
+                Пароль
+                <input formControlName="password" type="text" class="input-form" placeholder="*********">
+            </label>
+        </form>
+    </div>
+    <div *ngIf="isOrganisation">
+        <form action="" class="login-forms" [formGroup]="orgForm">
+            <label class="form-label">
+                Электронная почта
+                <input formControlName="email" type="text" class="input-form" placeholder="name@gmail.com">
+            </label>
+            <label class="form-label">
+                Пароль
+                <input formControlName="password" type="text" class="input-form" placeholder="*********">
+            </label>
+            <label class="form-label">
+                Название организации
+                <input formControlName="nameOfOrg" type="text" class="input-form" placeholder="Название">
+            </label>
+            <div class="file">
+                <p class="form-label">Подтверждающий документ:</p>
+                <label class="file-upload courier_new_normal btn-style2">
+                    <input type="file" (change)="onFileSelected($event)">
+                    <span>📎 Загрузить файл</span>
+                </label>
+            </div>
+              
+        </form>
+    </div>
+    <div class="buttons">
+        <button class="btn-style2 courier_new_normal" type="submit" (click)="onSubmit($event)">Зарегистрироваться</button>
+        <a href="/login"><button class="btn-style1 courier_new_normal">Уже есть аккаунт</button></a>
+    </div>
+</div>

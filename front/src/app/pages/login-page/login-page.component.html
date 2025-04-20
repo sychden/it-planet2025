@@ -1,0 +1,25 @@
+<div class="login-shape">
+    <a href="/">
+        <div class="back">
+            <img src="/assets/imgs/arrow.png" alt="стрелка" class="arrow">
+            <p class="courier_new_bold backP">Назад</p>
+        </div>
+    </a>
+    <h1 class="courier_new_bold">EventFinder</h1>
+    <h2 class="courier_new_bold">Вход в личный кабинет</h2>
+    <form action="" class="login-forms" [formGroup]="form" (keyup.enter)="onSubmit($event)">
+        <label class="form-label">
+            Электронная почта
+            <input formControlName="email" type="text" class="input-form" placeholder="name@gmail.com">
+        </label>
+        <label class="form-label">
+            Пароль
+            <input formControlName="password" type="text" class="input-form" placeholder="*********">
+        </label>
+        <a href="/recovery-password" class="courier_new_normal">Забыл пароль</a>
+    </form>
+    <div class="buttons">
+        <button class="btn-style2 courier_new_normal" type="submit" (click)="onSubmit($event)">Войти</button>
+        <a href="/reg"><button class="btn-style1 courier_new_normal">Зарегистрироваться</button></a>
+    </div>
+</div>

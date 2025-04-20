@@ -1,0 +1,48 @@
+<div class="edit-profile-container">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <div class="form-header">
+        <h1>Редактирование профиля</h1>
+        <button type="submit" 
+                [disabled]="profileForm.invalid || isLoading" 
+                class="save-button courier_new_normal">
+          {{ isLoading ? 'Сохранение...' : 'Сохранить' }}
+        </button>
+        <a [routerLink]="['/profile']" class="cancel-button courier_new_normal">Отмена</a>
+      </div>
+  
+      <div class="avatar-upload">
+        <img [src]="avatarPreview || '/assets/default-avatar.png'" 
+             alt="Аватар" 
+             class="avatar-preview">
+        <label class="upload-label">
+          <input type="file" 
+                 accept="image/*" 
+                 (change)="onFileChange($event)" 
+                 hidden>
+          Изменить фото
+        </label>
+      </div>
+  
+      <div class="form-group">
+        <label class="form-label">Имя или название вашей организации</label>
+        <input type="text" 
+               formControlName="name" 
+               placeholder="Название" class="input-form">
+        <div *ngIf="profileForm.get('name')?.invalid && profileForm.get('name')?.touched" 
+             class="error">
+          Пожалуйста, укажите имя или название вашей организации
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" 
+               formControlName="email" 
+               placeholder="Ваш email" class="input-form">
+        <div *ngIf="profileForm.get('email')?.invalid && profileForm.get('email')?.touched" 
+             class="error">
+          Пожалуйста, укажите корректный email
+        </div>
+      </div>
+    </form>
+  </div>

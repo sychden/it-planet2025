@@ -1,0 +1,17 @@
+<div class="event-card" *ngIf="event">
+  <div class="image-wrapper">
+    <img [src]="event.imageUrl" alt="Изображение мероприятия" class="event-image">
+  </div>
+  <div class="event-details">
+    <div class="event-text">
+      <h3 class="courier_new_bold event-name">{{ event.title }}</h3>
+      <small class="courier_new_bold event-date">Дата: {{ format(event.date) }}</small>
+      <p class="courier_new_bold event-descr">
+        {{ event.description.slice(0, 40) }}{{ event.description.length > 40 ? '...' : '' }}
+      </p>
+    </div>
+      <div>
+      <button (click)="onDetailsClick($event)" class="btn-style2 courier_new_normal">Подробнее</button>
+    </div>
+  </div>
+</div>

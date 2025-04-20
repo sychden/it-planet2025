@@ -1,0 +1,8 @@
+.registered-events{
+    padding: 30px;
+}
+.registered-events h3{
+    font-size: 28px;
+    line-height: 28px;
+    color: var(--black-color);
+}

@@ -1,0 +1,38 @@
+<div class="sidebar">
+    <a href=""><img src="/assets/imgs/logoHeader.png" alt="logo" class="logo"></a>
+    @if(auth.isUser()){
+    <div class="userButtons">
+        <a [routerLink]="['/profile']"><button class="btn-style1 courier_new_normal">Мои данные</button></a>
+        <a [routerLink]="['friends']"><button class="btn-style1 courier_new_normal">Друзья</button></a>
+        <a [routerLink]="['user/events']"><button class="btn-style1 courier_new_normal">Мои мероприятия</button></a>
+        <a [routerLink]="['chats']"><button class="btn-style1 courier_new_normal">Диалоги</button></a>
+        <a [routerLink]="['user/settings']"><button class="btn-style1 courier_new_normal">Настройки</button></a>
+    </div>
+    }
+    @if(auth.isModerator() || auth.isAdmin()){
+        <h2>Модерация</h2>
+        <div class="userButtons">
+            <a [routerLink]="['moderation/events']"><button class="btn-style1 courier_new_normal">Мероприятия</button></a>
+            <a [routerLink]="['moderation/news']"><button class="btn-style1 courier_new_normal">Новости</button></a>
+            <a [routerLink]="['verification/org']"><button class="btn-style1 courier_new_normal">Организации</button></a>
+            <a [routerLink]="['moderation/users']"><button class="btn-style1 courier_new_normal">Пользователи</button></a>
+        </div>
+    }
+    @if(auth.isOrg()){
+        <div class="userButtons">
+            <a [routerLink]="['/profile']"><button class="btn-style1 courier_new_normal">Мои данные</button></a>
+            <a [routerLink]="['org/events']"><button class="btn-style1 courier_new_normal">Мои мероприятия</button></a>
+            <a [routerLink]="['org/news']"><button class="btn-style1 courier_new_normal">Мои новости</button></a>
+            <a [routerLink]="['chats']"><button class="btn-style1 courier_new_normal">Диалоги</button></a>
+        </div>
+    }
+    <div class="down">
+        <button class="btn-style1 courier_new_normal" (click)="exit()">Выйти</button>
+    </div>
+</div>
+<div class="profileIcon">
+    <a [routerLink]="['/profile']"><div class="accountShape"><img src="/assets/imgs/accountIcon.png" alt="account" class="accountIcon"></div></a>
+</div>
+<div class="content">
+    <router-outlet></router-outlet>
+</div>

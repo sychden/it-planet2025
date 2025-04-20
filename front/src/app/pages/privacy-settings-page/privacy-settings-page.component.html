@@ -1,0 +1,14 @@
+<div class="privacy-container">
+    <h2>Настройки конфиденциальности</h2>
+    <form [formGroup]="privacyForm" (ngSubmit)="onSubmit()">
+      <label class="switch-label form-label">
+        <input type="checkbox" formControlName="showVisitedEvents">
+        Показывать другим пользователям мероприятия, которые я посещал
+      </label>
+  
+      <button type="submit" [disabled]="isLoading" class="btn-style2 courier_new_normal">
+        Сохранить
+      </button>
+    </form>
+  </div>
+  
